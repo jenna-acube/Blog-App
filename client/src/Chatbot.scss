@@ -1,0 +1,97 @@
+/* Chatbot.scss */
+.chatbot {
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 580px;; /* Full height */
+    width: 100%; /* Full width */
+    border: 1px solid #ced4da; /* Border for chatbot */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    
+
+
+}
+.chatbot-header {
+    background-color:  #937979; /* Header color */
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em; /* Larger font size for header */
+}
+
+.chatbot-messages {
+    height: 300px;
+    flex: 1; /* Take up available space */
+    overflow-y: scroll; /* Enable scrolling */
+    padding: 10px;
+    background-color: #f8f9fa; /* Light background for chat area */
+}
+
+.chatbot-message {
+    margin-bottom: 10px; /* Space between messages */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Padding inside the message box */
+    max-width: 70%; /* Limit message width */
+}
+
+.chatbot-message.user {
+    background-color:  #c7bebe; /* User message background */
+    color: rgb(1, 1, 1); /* User message text color */
+    align-self: flex-end; /* Align user messages to the right */
+}
+
+.chatbot-message.ai {
+    background-color: rgb(129, 129, 129)9; /* Lighter color for AI messages */
+    color: #050505; /* AI message text color */
+    align-self: flex-start; /* Align AI messages to the left */
+}
+.chatbot-input {
+    display: flex;
+    margin-top: 10px; /* Space between messages and input */
+}
+
+.chatbot-input input {
+    flex: 1; /* Take available width */
+    padding: 10px;
+    border: 1px solid #ced4da; /* Border for the input */
+    border-radius: 4px; /* Rounded corners */
+    margin-right: 10px; /* Spacing between input and button */
+}
+
+.chatbot-input button {
+    padding: 10px;
+    background-color:  #937979; /* Button color */
+    color: rgb(0, 0, 0);
+    border: none; /* Remove default button border */
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.chatbot-input button:hover {
+    background-color:   #8d8888;
+    color: #060606;  /* Darker shade on hover */
+}
+
+/* Placeholder for empty chat area */
+.chatbot-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Full height for empty area */
+    color: #6c757d; /* Light gray text color */
+    font-size: 1.2em; /* Slightly larger font size */
+}
+
+/* Add this to Chatbot.scss */
+.chatbot-loading {
+    color:  #937979; /* or your theme's primary color */
+    font-style: italic;
+}
+
+.chatbot-error {
+    color: red;
+    font-weight: bold;
+}
+
