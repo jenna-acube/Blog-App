@@ -13,7 +13,7 @@ const Chatbot = () => {
         setLoading(true); // Start loading
         setError(null); // Reset any previous errors
         try {
-            const response = await axios.post('http://localhost:8000/api/gemini', {
+            const response = await axios.post('https://blog-app-jsq6.onrender.com/api/gemini', {
                 prompt: userMessage
             });
 
