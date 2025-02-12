@@ -20,7 +20,7 @@ const app = express();
 
 // Enable CORS
 app.use(cors({
-    origin: 'http://localhost:3000', // Adjust this if your frontend is hosted elsewhere
+    origin: 'glowing-biscuit-abef59.netlify.app', // Adjust this if your frontend is hosted elsewhere
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
