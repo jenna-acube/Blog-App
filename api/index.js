@@ -9,6 +9,9 @@ import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 import axios from "axios";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -49,19 +52,12 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
-// const genAI = new GoogleGenerativeAI('AIzaSyA3RBdxQb28SUd3jEx-B7GL7A2q4d3XbzE');
-// const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-// const prompt = "hi i amjenna ai dev";
-
-// const result = await model.generateContent(prompt);
-// console.log(result.response.text());
 
 
 // New route for Google Gemini API
 app.use('/api/gemini', async (req, res) => {
   try {
-      const genAI = new GoogleGenerativeAI('AIzaSyA3RBdxQb28SUd3jEx-B7GL7A2q4d3XbzE');
+      const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
       // Get the prompt from the request body if needed
