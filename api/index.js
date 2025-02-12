@@ -20,7 +20,7 @@ const app = express();
 
 // Enable CORS
 app.use(cors({
-    origin: 'glowing-biscuit-abef59.netlify.app', // Adjust this if your frontend is hosted elsewhere
+    origin: 'https://glowing-biscuit-abef59.netlify.app', // Adjust this if your frontend is hosted elsewhere
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
@@ -70,8 +70,8 @@ app.use('/api/gemini', async (req, res) => {
                     Only reply when asked for a blog with a good title and description about the related topic.
                     The question is ${prompt}` 
 
-      const result = await model.generateContent(text);
-      console.log(result.response.text());
+      const result = await model.generateContent([text]); 
+      const responseText = await result.response.text();
       
       // Send the generated content back as a response
       res.json({ response: result.response.text() });
