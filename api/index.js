@@ -20,7 +20,7 @@ const app = express();
 
 // Enable CORS
 app.use(cors({
-    origin: 'https://glowing-biscuit-abef59.netlify.app', // Adjust this if your frontend is hosted elsewhere
+    origin: 'https://j-blogapp.netlify.app', // Adjust this if your frontend is hosted elsewhere
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
