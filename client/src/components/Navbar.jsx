@@ -51,7 +51,7 @@ const Navbar = () => {
               <span onClick={handleLogout} style={{ cursor: 'pointer' }}>LOGOUT</span>
             </>
           ) : (
-            <Link className="link" to="/login">
+            <Link className="link" to="https://blog-app-jsq6.onrender.com/login">
               LOGIN
             </Link>
           )}

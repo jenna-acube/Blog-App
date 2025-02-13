@@ -8,7 +8,7 @@ const Menu = ({ cat, currentPostId }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/api/posts/?cat=${cat}`);
+        const res = await axios.get(`https://blog-app-jsq6.onrender.com/api/posts/?cat=${cat}`);
         console.log("Fetched posts:", res.data); // Log the response data
 
         // Check if the response data is an array

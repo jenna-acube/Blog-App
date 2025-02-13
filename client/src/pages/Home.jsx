@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/api/posts${cat}`);
+        const res = await axios.get(`https://blog-app-jsq6.onrender.com/api/posts${cat}`);
         console.log('Fetched posts:', res.data); 
         setPosts(res.data);
       } catch (err) {
