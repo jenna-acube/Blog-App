@@ -11,7 +11,7 @@ export const AuthContextProvider = ({ children }) => {
   // The login function, in case you're calling it manually later
   const login = async (inputs) => {
     try {
-      const res = await axios.post("https://blog-app-jsq6.onrender.com/api/auth/login", inputs); // Ensure this matches your backend route
+      const res = await axios.post(`https://blog-app-jsq6.onrender.com/api/auth/login`, inputs); // Ensure this matches your backend route
       setCurrentUser(res.data);  // Store user data
       localStorage.setItem("user", JSON.stringify(res.data)); // Store user in local storage
     } catch (error) {
@@ -22,7 +22,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const register = async (inputs) => {
     try {
-      await axios.post("https://blog-app-jsq6.onrender.com/api/auth/register", inputs);  // No need to add localhost:5000, because of proxy setup
+      await axios.post(`https://blog-app-jsq6.onrender.com/api/auth/register`, inputs);  // No need to add localhost:5000, because of proxy setup
       await login(inputs); // Log the user in automatically after registration
     } catch (error) {
       console.error("Registration failed:", error);
@@ -35,7 +35,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      const res = await axios.post('https://blog-app-jsq6.onrender.com/api/auth/logout');
+      const res = await axios.post(`https://blog-app-jsq6.onrender.com/api/auth/logout`);
       console.log('Logout successful:', res.data);
       setCurrentUser(null); // Clear user state
     } catch (error) {
