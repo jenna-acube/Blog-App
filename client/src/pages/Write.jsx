@@ -88,7 +88,7 @@ const Write = () => {
   
       if (state) {
         // Update the post
-        await axios.put(`/api/posts/${state.id}`, {
+        await axios.put(`https://blog-app-jsq6.onrender.com/api/posts/${state.id}`, {
           title,
           desc: value,
           cat,
