@@ -85,15 +85,19 @@ const Write = () => {
     e.preventDefault();
     try {
       const imgUrl = file ? await upload() : state?.img;  // Get the image URL
-  
+      console.log("Updating:", state?.id, "Title:", title, "Desc:", value, "Category:", cat);
+
       if (state) {
         // Update the post
-        await axios.put(`https://blog-app-jsq6.onrender.com/api/posts/${state.id}`, {
+        const response = await axios.put(`https://blog-app-jsq6.onrender.com/api/posts/${state.id}`, {
           title,
           desc: value,
           cat,
-          img: imgUrl,  // Ensure the correct image URL is sent
+          img: imgUrl,
         }, { withCredentials: true });
+        
+        console.log("Response from server:", response.data);
+        
       } else {
         // Create a new post
         await axios.post("https://blog-app-jsq6.onrender.com/api/posts/", {
