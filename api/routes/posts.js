@@ -1,4 +1,5 @@
 import express from "express";
+import authMiddleware from "../middleware/auth.js";
 import {
   getPost,
   getPosts,
@@ -8,11 +9,11 @@ import {
 } from "../controllers/post.js";
 
 const router = express.Router();
-router.post("/", addPost);
-router.get("/", getPosts);
-router.get("/:id", getPost);
-router.put("/:id", updatePost);
-router.delete("/:id", deletePost);
+router.post("/",authMiddleware, addPost);
+router.get("/",authMiddleware, getPosts);
+router.get("/:id",authMiddleware, getPost);
+router.put("/:id",authMiddleware, updatePost);
+router.delete("/:id",authMiddleware, deletePost);
 
 
 
