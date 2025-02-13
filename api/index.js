@@ -20,7 +20,7 @@ const app = express();
 
 // Enable CORS
 app.use(cors({
-    origin: '*', // Adjust this if your frontend is hosted elsewhere
+    origin: 'https://blog-app-1-y0ry.onrender.com', // Adjust this if your frontend is hosted elsewhere
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
