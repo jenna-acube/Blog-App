@@ -18,14 +18,19 @@ const Single = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://blog-app-jsq6.onrender.com/api/posts/${postId}`);
+        const res = await axios.get(`https://blog-app-jsq6.onrender.com/api/posts/${postId}`, {
+          headers: {
+            Authorization: `Bearer ${currentUser?.token}`,
+          },
+        });
         setPost(res.data);
       } catch (err) {
         console.log(err);
       }
     };
     fetchData();
-  }, [postId]);
+  }, [postId, currentUser]); // Include currentUser in dependencies
+  
 
    // Scroll to the top when the component mounts
    useEffect(() => {
@@ -34,12 +39,17 @@ const Single = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://blog-app-jsq6.onrender.com/api/posts/${postId}`);
+      await axios.delete(`https://blog-app-jsq6.onrender.com/api/posts/${postId}`, {
+        headers: {
+          Authorization: `Bearer ${currentUser?.token}`,
+        },
+      });
       navigate("/");
     } catch (err) {
       console.log(err);
     }
   };
+  
 
   // const getText = (html) => {
   //   const doc = new DOMParser().parseFromString(html, "text/html");
