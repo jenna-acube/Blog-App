@@ -45,7 +45,7 @@ const Write = () => {
     const formData = new FormData();
     formData.append("file", file); // Correct field name must match the backend
 
-    const res = await axios.post("/api/upload", formData, {
+    const res = await axios.post("https://blog-app-jsq6.onrender.com/api/upload", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -88,7 +88,7 @@ const Write = () => {
   
       if (state) {
         // Update the post
-        await axios.put(`/api/posts/${state.id}`, {
+        await axios.put(`https://blog-app-jsq6.onrender.com/api/posts/${state.id}`, {
           title,
           desc: value,
           cat,
@@ -96,7 +96,7 @@ const Write = () => {
         }, { withCredentials: true });
       } else {
         // Create a new post
-        await axios.post("/api/posts/", {
+        await axios.post("https://blog-app-jsq6.onrender.com/api/posts/", {
           title,
           desc: value,
           cat,
