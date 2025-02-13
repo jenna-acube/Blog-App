@@ -23,6 +23,7 @@ app.use(cors({
     origin: 'https://blog-app-1-y0ry.onrender.com', // Adjust this if your frontend is hosted elsewhere
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+    allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 app.use(express.json());
