@@ -51,7 +51,7 @@ const Login = () => {
         <button type="submit">Login</button>
         {err && <p id="error-message">{err}</p>}
         <span>
-          Don’t have an account? <Link to="https://blog-app-jsq6.onrender.com/register">Register</Link>
+          Don’t have an account? <Link to="/register">Register</Link>
         </span>
       </form>
     </div>
