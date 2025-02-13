@@ -20,8 +20,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://blog-app-jsq6.onrender.com/api/auth/register", inputs);
-      const loginResponse = await axios.post("api/auth/login", {
+      await axios.post(`https://blog-app-jsq6.onrender.com/api/auth/register`, inputs);
+      const loginResponse = await axios.post(`https://blog-app-jsq6.onrender.com/api/auth/login`, {
         username: inputs.username,
         password: inputs.password,
       });
@@ -69,7 +69,7 @@ const Register = () => {
         />
         <button onClick={handleSubmit}>Register</button>
         {err && <p>{typeof err === 'string' ? err : JSON.stringify(err)}</p>}
-        <span>Do you have an account? <Link to="/login">Login</Link></span>
+        <span>Do you have an account? <Link to="https://blog-app-jsq6.onrender.com/login">Login</Link></span>
       </form>
     </div>
   );
