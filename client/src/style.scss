@@ -512,12 +512,15 @@ $lightGreen: #937979;
           }
 
           .links {
+            display: flex;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
 
-            h6,
-            span {
+            span,
+            h6 {
               font-size: 14px;
+              font-weight: 400;
             }
           }
         }
@@ -536,6 +539,7 @@ $lightGreen: #937979;
             .img {
               width: 100%;
               height: 200px;
+              flex: unset !important;
 
               img {
                 width: 100%;
