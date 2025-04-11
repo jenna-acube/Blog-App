@@ -478,3 +478,46 @@ $lightGreen: #937979;
     }
   }
 }
+@media (max-width: 768px) {
+  .app {
+    .container {
+      width: 100%;
+      padding: 0 15px;
+
+      .auth {
+        form {
+          width: 90%;
+          padding: 30px;
+        }
+      }
+
+      .home .posts .post {
+        flex-direction: column;
+        gap: 20px;
+
+        .img, .content {
+          width: 100%;
+        }
+      }
+
+      .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .add {
+        flex-direction: column;
+      }
+
+      .single {
+        flex-direction: column;
+
+        .content,
+        .menu {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
